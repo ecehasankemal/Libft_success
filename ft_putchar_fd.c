@@ -23,7 +23,7 @@ void	ft_putchar_fd(char c, int fd)
  int main()
  {		
 		int fd;
-		fd = open("deneme.txt",1);
+		fd = open("deneme.txt",O_RDWR);
 		ft_putchar_fd('a',fd);
 		printf("%d",fd);
  }  

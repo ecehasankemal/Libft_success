@@ -45,7 +45,7 @@ int main()
    	int n = 2147483647;
    	int n1 = -2147483647;
 	int fd;
-	fd = open("deneme3.txt",1);
+	fd = open("deneme3.txt",O_RDWR);
 	printf("%d",fd);
   	ft_putnbr_fd(n,fd);
 	ft_putnbr_fd(n1,fd);

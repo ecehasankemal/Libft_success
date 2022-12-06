@@ -31,7 +31,7 @@ void	ft_putendl_fd(char *s, int fd)
 int main()
 {
 		int fd ;
-		fd = open("deneme4.txt", 1);
+		fd = open("deneme4.txt", O_RDWR);
 		char k[] =  "nice hahaha";
 		ft_putendl_fd(k, fd);
 }

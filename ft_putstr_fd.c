@@ -30,7 +30,7 @@ void	ft_putstr_fd(char *s, int fd)
 int main()
 {
 		int fd;
-		fd = open("deneme2.txt",1);
+		fd = open("deneme2.txt",O_RDWR);
 		ft_putstr_fd("samet",fd);
 		printf("%d",fd);
 }
