@@ -24,3 +24,15 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
+
+/*
+#include <stdio.h>
+#include <fcntl.h>
+int main()
+{
+		int fd ;
+		fd = open("deneme4.txt", 1);
+		char k[] =  "nice hahaha";
+		ft_putendl_fd(k, fd);
+}
+*/

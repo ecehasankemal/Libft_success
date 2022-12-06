@@ -34,7 +34,7 @@ void	funct(unsigned int a, char *b)
 }
 int main()
 {
-	char dizi[] = "aaaaaaaaaaaaaaaa";
-	ft_striteri(dizi, funct);
-	printf("%s",dizi);
+	char array[] = "aaaaaaaaaaaaaaaa";
+	ft_striteri(array, funct);
+	printf("%s",array);
 }*/

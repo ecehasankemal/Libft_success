@@ -37,6 +37,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 int	main()
 {
 	char a[] = "hece";
-	char b[] = "hacaoglu";
-	printf("return %zu -> %s", ft_strlcpy(a, b, 9), a);
+	char b[] = "hacason";
+	printf("return %zu -> %s", ft_strlcpy(a, b, 8), a);
 }*/

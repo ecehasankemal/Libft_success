@@ -23,3 +23,15 @@ void	ft_putstr_fd(char *s, int fd)
 		index++;
 	}
 }
+
+/*
+#include <stdio.h>
+#include <fcntl.h>
+int main()
+{
+		int fd;
+		fd = open("deneme2.txt",1);
+		ft_putstr_fd("samet",fd);
+		printf("%d",fd);
+}
+*/

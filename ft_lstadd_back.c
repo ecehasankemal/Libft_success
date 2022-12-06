@@ -30,14 +30,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 /*#include <stdio.h>
 int	main(void)
 {
-	t_list	*deneme;
+	t_list	*exam;
 	t_list	*sample;
 
-	deneme = ft_lstnew("abc");
+	exam = ft_lstnew("abc");
 	sample = ft_lstnew("test");
 
-	ft_lstadd_back(&deneme, sample);
-	printf("%s\n", (char *)deneme->content);
-	printf("%s" , (char *)deneme->next->content);
+	ft_lstadd_back(&exam, sample);
+	printf("%s\n", (char *)exam->content);
+	printf("%s" , (char *)exam->next->content);
 	return (0);
 }*/

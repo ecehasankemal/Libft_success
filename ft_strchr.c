@@ -33,7 +33,7 @@ char	*ft_strchr(const char *str, int c)
 /*#include <stdio.h>
 int	main(void)
 {
-	char	*str = "deneme yazisi";
+	char	*str = "sample write";
 	char	c = 'z';
 	printf("%s | %c -> %s", str, c, ft_strchr(str, c));
 }*/

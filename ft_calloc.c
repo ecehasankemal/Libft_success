@@ -30,8 +30,8 @@ int	main()
 	int *ft_p;
 	int i;
 	int j;
-	ft_p = (int *)ft_calloc(2, 2);
-	ptr = (int *)calloc(2, 2);
+	ft_p = (int *)ft_calloc(2, sizeof(int));
+	ptr = (int *)calloc(2, sizeof(int));
 	i = 0;
 	while (i < 5)
 	{

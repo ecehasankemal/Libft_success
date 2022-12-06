@@ -39,7 +39,7 @@ char	funct(unsigned int a, char b)
 }
 int main()
 {
-	char	dizi[] = "aaaaaaaaaaaaaaaa";
-	char	*new = ft_strmapi(dizi, funct);
+	char	array[] = "aaaaaaaaaaaaaaaa";
+	char	*new = ft_strmapi(array, funct);
 	printf("%s",new);
 }*/

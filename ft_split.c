@@ -87,10 +87,10 @@ char	**ft_split(char const *s, char c)
 int	main(void)
 {
 	char	delim = ' ';
-	char	*src = "hece herdaim bir numara";
-	char	**sonuc;
+	char	*src = "hece is always number one";
+	char	**result;
 	int		i = -1;
-	sonuc = ft_split(src, delim);
+	result = ft_split(src, delim);
 	while (i++ < 4)
-		printf("%d. kisim: %s\n", i ,sonuc[i]);
+		printf("%d. blalbla: %s\n", i ,result[i]);
 }*/

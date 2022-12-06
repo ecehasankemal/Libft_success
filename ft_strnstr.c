@@ -40,7 +40,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 /*#include <stdio.h>
 int	main(void)
 {
-	char	*str = "hece mükemmel birisi";
-	char	*fnd = "mü";
+	char	*str = "hece is beatiful";
+	char	*fnd = "is";
 	printf("%s", ft_strnstr(str, fnd, 9));
 }*/

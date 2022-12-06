@@ -33,6 +33,6 @@ char	*ft_strdup(const char *str)
 /*#include <stdio.h>
 int	main(void)
 {
-	char	*src = "bunu dupla";
+	char	*src = "duping";
 	printf("%s -> %s", src, ft_strdup(src));
 }*/
