@@ -12,85 +12,83 @@
 
 #include "libft.h"
 
-static int	ft_word_counter(const char *str, char c)
+size_t	word_count(char const *s, char c)
 {
-	int	index;
-	int	dot;
-	int	trigger;
+	size_t	iter;
+	size_t	count;
 
-	index = 0;
-	dot = 0;
-	trigger = 0;
-	while (str[index] != '\0')
+	iter = 0;
+	count = 0;
+	while (s[iter] == c && s[iter] != '\0')
+		iter++;
+	while (s[iter] != '\0')
 	{
-		if (str[index] != c && trigger == 0)
-		{
-				trigger = 1;
-				dot++;
-		}
-		else if (str[index] == c)
-				trigger = 0;
-		index++;
+		while (s[iter] != c && s[iter] != '\0')
+			iter++;
+		count++;
+		while (s[iter] == c && s[iter] != '\0')
+			iter++;
 	}
-	return (dot);
+	return (count);
 }
 
-static char	*ft_word_dup(const char *str, int start, int end)
+char	*ft_strcreate(const char *s, char c, size_t counter)
 {
-	int		index;
-	char	*word;
+	size_t	len;
+	size_t	tmp;
 
-	index = 0;
-	word = malloc(sizeof(char) * (end - start + 1));
-	if (!word)
-		return (NULL);
-	while (start < end)
+	len = 0;
+	tmp = counter;
+	while (s[tmp] != c && s[tmp] != '\0')
 	{
-			word[index] = str[start];
-			start++;
-			index++;
-	}
-	word[index] = '\0';
-	return (word);
+		tmp++;
+		len++;
+	}	
+	return (ft_substr(s, counter, len));
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	size_t	index;
-	int		spindex;
-	int		start;
+	size_t	counter;
+	size_t	iter;
+	char	**res;
 
 	if (!s)
-		return (0);
-	index = -1;
-	spindex = 0;
-	start = -1;
-	split = malloc(sizeof(char *) * (ft_word_counter(s, c) + 1));
-	if (!split)
-		return (0);
-	while (++index <= ft_strlen(s))
+		return (NULL);
+	res = (char **)malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!res)
+		return (NULL);
+	counter = 0;
+	iter = 0;
+	while (s[counter] != '\0')
 	{
-		if (s[index] != c && start < 0)
-			start = index;
-		else if ((s[index] == c || index == ft_strlen(s)) && start >= 0)
+		while (s[counter] == c && s[counter] != '\0')
+			counter++;
+		if (s[counter] != '\0')
 		{
-			split[spindex++] = ft_word_dup(s, start, index);
-			start = -1;
+			res[iter] = ft_strcreate(s, c, counter);
+			iter++;
 		}
+		while (s[counter] != c && s[counter] != '\0')
+			counter++;
 	}
-	split[spindex] = NULL;
-	return (split);
+	res[iter] = 0;
+	return (res);
 }
 
 /*#include <stdio.h>
-int	main(void)
+int    main(void)
 {
-	char	delim = ' ';
-	char	*src = "hece is always number one";
-	char	**result;
-	int		i = -1;
-	result = ft_split(src, delim);
-	while (i++ < 4)
-		printf("%d. blalbla: %s\n", i ,result[i]);
+    char    a[] = "hece.hece.hece";
+    char    **res;
+    int        iter;
+
+    iter = 0;
+    res = ft_split2(a, '.');
+    while (res[iter])
+    {
+        printf("%s ", res[iter]);
+        iter++;
+    }
+    return (0);
 }*/
