@@ -9,20 +9,21 @@ BONUS_OBJ = $(BONUS:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
-	@$(CC) $(CFLAGS) -c $(SRC)
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJ)
 	@ar rc $(NAME) *.o
-	@echo "\n\033[92m $@ built ✅\033[0m\n"
-bonus:
-	@$(CC) $(CFLAGS) -c $(BONUS)
+	@echo "\n$(shell tput setaf 10) $@ built ✅ $(shell tput sgr0)\n"
+bonus: $(OBJ) $(BONUS_OBJ)
 	@ar rc $(NAME) *.o
-	@echo "\n\033[92m $@ built ✅\033[0m\n"
+	@echo "\n$(shell tput setaf 10) $@ built ✅$(shell tput sgr0)\n"
 clean:
 	@/bin/rm -f  *.o
-	@echo "\n\033[36m object files removed 👋\033[0m\n"
+	@echo "\n$(shell tput setaf 11) object files removed 👋$(shell tput sgr0)\n"
 fclean: clean
 	@/bin/rm -f $(NAME)
-	@echo "\n\033[36m executables removed 👋\033[0m\n"
+	@echo "\n$(shell tput setaf 11) executables removed 👋$(shell tput sgr0)\n"
 
 re: fclean all
 

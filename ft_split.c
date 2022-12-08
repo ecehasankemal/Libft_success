@@ -6,39 +6,35 @@
 /*   By: hece  <hece@student.42kocaeli.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 01:00:31 by hece              #+#    #+#             */
-/*   Updated: 2022/09/26 01:00:36 by hece             ###   ########.tr       */
+/*   Updated: 2022/12/08 10:47:32 by hece             ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	word_count(char const *s, char c)
+size_t	word_count(const char *s, char c)
 {
-	size_t	iter;
-	size_t	count;
-
-	iter = 0;
-	count = 0;
-	while (s[iter] == c && s[iter] != '\0')
-		iter++;
-	while (s[iter] != '\0')
+	int (index) = 0;
+	int (count) = 0;
+	int (trigger) = 0;
+	while (s[index] != '\0')
 	{
-		while (s[iter] != c && s[iter] != '\0')
-			iter++;
-		count++;
-		while (s[iter] == c && s[iter] != '\0')
-			iter++;
+		if (s[index] != c && trigger == 0)
+		{
+				trigger = 1;
+				count++;
+		}
+		else if (s[index] == c)
+				trigger = 0;
+		index++;
 	}
 	return (count);
 }
 
 char	*ft_strcreate(const char *s, char c, size_t counter)
 {
-	size_t	len;
-	size_t	tmp;
-
-	len = 0;
-	tmp = counter;
+	size_t (len) = 0;
+	size_t (tmp) = counter;
 	while (s[tmp] != c && s[tmp] != '\0')
 	{
 		tmp++;
