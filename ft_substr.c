@@ -35,7 +35,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*#include <stdio.h>
 int	main(void)
 {
-	char	*str = "kemal hece";
-	char	*ret = ft_substr(&str[3], 0, 9);
+	char	str[] = "kemal hece";
+	char	*ret = ft_substr(str, 3, 9);
 	printf("%s -> %s", str, ret);
 }*/
