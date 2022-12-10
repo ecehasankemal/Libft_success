@@ -31,7 +31,7 @@ int main()
 {
 		int fd;
 		fd = open("deneme2.txt",O_RDWR);
-		ft_putstr_fd("samet",fd);
+		ft_putstr_fd("hece",fd);
 		printf("%d",fd);
 }
 */
